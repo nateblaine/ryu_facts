@@ -1,0 +1,23 @@
+{
+  "name": "tryu_facts",
+  "version": "1.0.0",
+  "description": "tryu facts twilio express app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nateblaine/ryu_facts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nateblaine/ryu_facts/issues"
+  },
+  "homepage": "https://github.com/nateblaine/ryu_facts#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "twilio": "^3.30.0"
+  }
+}
