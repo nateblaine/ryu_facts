@@ -17,7 +17,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Download the helper library from https://www.twilio.com/docs/node/install
 // Your Account Sid and Auth Token from twilio.com/console
 // DANGER! This is insecure. See http://twil.io/secure
-
+const accountSid = 'sid';
+const authToken = 'auth';
 const client = require('twilio')(accountSid, authToken);
 
 // logging!
@@ -38,9 +39,9 @@ console.log = function(msg) {
 // load ryu facts from JSON file
 const RYUFACTS = JSON.parse(fs.readFileSync('./RyuFacts.json', 'utf8'));
 // every 30 mins
-// const TEXTTIMER = 1800000;
+const TEXTTIMER = 1800000;
 // every ~1 min
-const TEXTTIMER = 50000;
+// const TEXTTIMER = 50000;
 
 var FACTSINDEX = 0;
 
@@ -49,10 +50,6 @@ var FACTSINDEX = 0;
 //   {
 //     name: 'Nate',
 //     number: '+17033036393'
-//   },
-//   {
-//     name: 'Kolby',
-//     number: '+17039990556'
 //   }
 //
 // ];
@@ -62,6 +59,66 @@ var listOfNumbers = [
   {
     name: 'Nate',
     number: '+17033036393'
+  },
+  {
+    name: 'Ryu',
+    number: '+18046989011'
+  },
+  {
+    name: 'Nikhil',
+    number: '+15715949445'
+  },
+  {
+    name: 'Jerry',
+    number: '+17576307971'
+  },
+  {
+    name: 'Scott',
+    number: '+15714220927'
+  },
+  {
+    name: 'Thomas',
+    number: '+19147879868'
+  },
+  {
+    name: 'Kieran',
+    number: '+18042456661'
+  },
+  {
+    name: 'Will',
+    number: '+12674417931'
+  },
+  {
+    name: 'Matt',
+    number: '+12407439614'
+  },
+  {
+    name: 'Mihir',
+    number: '+17572026925'
+  },
+  {
+    name: 'Adam L',
+    number: '+15714258040'
+  },
+  {
+    name: 'Joe',
+    number: '+13034089967'
+  },
+  {
+    name: 'Adam H',
+    number: '+15404143860'
+  },
+  {
+    name: 'Kolby',
+    number: '+17039990556'
+  },
+  {
+    name: 'Luke M',
+    number: '+17038593797'
+  },
+  {
+    name: 'Steven M',
+    number: '+17039731093'
   }
 ];
 // root post route
@@ -146,7 +203,7 @@ app.post('/', (req, res) => {
     twiml.message(retString);
   }
 
-  // add logic
+  // add logic - did not have time!
   else if (req.body.Body.toLowerCase().includes('add')) {
     console.log('--- INFO --- from [ ' + req.body.From + ']'
       + '\r\n'
